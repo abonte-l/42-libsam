@@ -7,3 +7,4 @@ Le langage assembleur, souvent appellé asm, est un langage de bas niveau pour o
 cheat sheet pour les registres --> [x86_64 NASM Assembly Quick Reference](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html)  
 liste des intructions --> [x86 Instruction Set Reference](https://c9x.me/x86/)  
 liste des intructions avec leurs description --> [Liste réduite d'instructions assembleur x86](http://jeanfrederic.gosio.free.fr/Enligne/asm/asm.html)  
+cour nasm --> [Programmation Assembleur NASM](https://www.unilim.fr/pages_perso/tristan.vaccon/cours_nasm.pdf)
