@@ -9,4 +9,4 @@ comp:
 	jmp comp ; on retourne au debut de comp:
 end:
 	mov rax, rcx ; on donne la valeur de retour rcx(registre compteur) a rax (registre retour de fonction)
-	ret
+	ret ; fin de la fonction
