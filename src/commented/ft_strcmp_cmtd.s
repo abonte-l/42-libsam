@@ -32,4 +32,4 @@ same:
 
 end:
 	movsx rax, dl
-	ret
+	ret ; fin de la fonction
