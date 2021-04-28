@@ -1,5 +1,5 @@
 section .text
-		global ft_strcmp
+		global __ft_strcmp
 		extern ft_strlen
 		extern ft_strcpy
 		extern malloc

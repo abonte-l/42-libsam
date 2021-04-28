@@ -1,5 +1,5 @@
 section .text
-		global ft_strcpy
+		global __ft_strcpy
 
 start:
 	mov rcx, -1

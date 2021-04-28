@@ -1,5 +1,5 @@
 section .text
-		global _ft_strlen
+		global __ft_strlen
 start:
 	mov rcx, rdi
 

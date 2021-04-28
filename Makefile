@@ -1,38 +1,40 @@
-NAME	= libasm.a
+NAME    	=	libasm.a
 
-DIR_SRCS = ./src/
+SRC		= 	$(shell find ./src -name *.s)
 
-SRCS	= $(DIR_SRCS)ft_strlen $(DIR_SRCS)ft_strcpy $(DIR_SRCS)ft_strcmp \
-			$(DIR_SRCS)ft_strdup $(DIR_SRCS)ft_read $(DIR_SRCS)ft_write
+OBJ		= 	$(SRC:.s=.o)
 
-OBJS	= $(SRCS:.s=.o)
 
-FLAGS_ASM	= -f elf64
+CC		=	clang
 
-RM	= rm -f
+CCFLAGS	=	-Wall -Wextra -Werror
 
-%.o: %.s
-	nasm $(FLAGS_ASM) $< -o $@
+EXEC	=	testeur
 
-$(NAME): $(OBJS) Makefile
-	ar -rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-	@echo $(NAME) : Created !
+all: $(NAME)
 
-all	: $(NAME)
+.s.o:
+	nasm -f elf64 -s $< -o $(<:.s=.o)
 
-test : re
-	clang -no-pie ./test/main.c -L libasm.a -lasm
+$(NAME): $(OBJ)
+	ar rcs $(NAME) $(OBJ)
+	@echo "$(NAME) has been succesfully created"
+
+
+test:main.o libasm.a
+	$(CC) main.o libasm.a -o $(EXEC)
+
+main.o:test/main.c 
+	$(CC) -c $< -I ./include -o main.o
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJ)  
 
 fclean: clean
 	$(RM) $(NAME)
+	$(RM) $(EXEC)
+	$(RM) main.o 
 
-tclean: fclean
-	$(RM) a.out
+re: fclean all
 
-re :	fclean all
-
-.PHONY: all, clean, fclean, test, re
+.PHONY: all test clean fclean re

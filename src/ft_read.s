@@ -1,5 +1,5 @@
 section .text
-		global ft_read
+		global __ft_read
 		extern __errno_location
 
 start:

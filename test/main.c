@@ -1,4 +1,4 @@
-# include <libasm.h>
+# include "../include/libasm.h"
 
 /*
 ** fonctions a tester strlen, strcpy, strdup, strcmp , read, write
@@ -74,19 +74,19 @@ void test_strcpy()
 
 	printf("PARAMETRE : %s\n", s1);
 	printf("Resultat strcpy : %s\n", strcpy(dest1, s1));
-	printf("Resultat ft_strcpy : %s\n\n", ft_strcmp(dest1, s1));
+	printf("Resultat ft_strcpy : %s\n\n", ft_strcpy(dest1, s1));
 
 	printf("PARAMETRE : %s\n", s2);
 	printf("Resultat strcpy : %s\n", strcpy(dest1, s2));
-	printf("Resultat ft_strcpy : %s\n\n", ft_strcmp(dest1, s2));
+	printf("Resultat ft_strcpy : %s\n\n", ft_strcpy(dest1, s2));
 
 	printf("PARAMETRE : %s\n", s3);
 	printf("Resultat strcpy : %s\n", strcpy(dest2, s3));
-	printf("Resultat ft_strcpy : %s\n\n", ft_strcmp(dest2, s3));
+	printf("Resultat ft_strcpy : %s\n\n", ft_strcpy(dest2, s3));
 
 	printf("PARAMETRE : %s\n", s4);
-	printf("Resultat strcpy : %s\n", strcpy(dest2, s4));
-	printf("Resultat ft_strcpy : %s\n\n", ft_strcmp(dest2, s4));
+	printf("Resultat strcpy : %s\n", strcpy(dest3, s4));
+	printf("Resultat ft_strcpy : %s\n\n", ft_strcpy(dest2, s4));
 
 }
 
@@ -98,23 +98,23 @@ void test_strdup()
 	char *s4 = "Prince, demande à Dieu pardon! Je quarte du pied, j'escarmouche, Je coupe, je feinte... A la fin de l'envoi, je touche.";
 
 	printf("PARAMETRE : %s\n", s1);
-	printf("Resultat strdup : %ld\n", strdup(s1));
-	printf("Resultat ft_strdup : %ld\n\n", ft_strdup(s1));
+	printf("Resultat strdup : %s\n", strdup(s1));
+	printf("Resultat ft_strdup : %s\n\n", ft_strdup(s1));
 
 	printf("PARAMETRE : %s\n", s2);
-	printf("Resultat strdup : %ld\n", strdup(s2));
-	printf("Resultat ft_strdup : %ld\n\n", ft_strdup(s2));
+	printf("Resultat strdup : %s\n", strdup(s2));
+	printf("Resultat ft_strdup : %s\n\n", ft_strdup(s2));
 
 	printf("PARAMETRE : %s\n", s3);
-	printf("Resultat strdup : %ld\n", strdup(s3));
-	printf("Resultat ft_strdup : %ld\n\n", ft_strdup(s3));
+	printf("Resultat strdup : %s\n", strdup(s3));
+	printf("Resultat ft_strdup : %s\n\n", ft_strdup(s3));
 
 	printf("PARAMETRE : %s\n", s4);
-	printf("Resultat strdup : %ld\n", strdup(s4));
-	printf("Resultat ft_strdup : %ld\n\n", ft_strdup(s4));
+	printf("Resultat strdup : %s\n", strdup(s4));
+	printf("Resultat ft_strdup : %s\n\n", ft_strdup(s4));
 }
 
-void test_strdup()
+void test_write()
 {
 	int ret;
 	int fd;
@@ -204,11 +204,11 @@ void test_read()
 	printf("Veuillez entrer l'input :\n");
 	errno = 0;
 	ret = ft_read(0, str, 2000);
-	printf("La fonction a lu : \n %s\n, str");
+	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat ft_read ret = %d\nErreur = %d\n\n", ret, errno);
 	errno = 0;
 	ret = read(0, str, 2000);
-	printf("La fonction a lu : \n %s\n, str");
+	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat write ret = %d\nErreur = %d\n\n", ret, errno);
 
 	printf("Test read depuis un fichier\n");
@@ -216,22 +216,22 @@ void test_read()
 	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
 	ret = ft_read(fd, str, 2000);
-	printf("La fonction a lu : \n %s\n, str");
+	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat ft_read ret = %d\nErreur = %d\n\n", ret, errno);
 	errno = 0;
 	ret = read(fd, str, 2000);
-	printf("La fonction a lu : \n %s\n, str");
+	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat read ret = %d\nErreur = %d\n\n", ret, errno);
 	close(fd);
 	
 	fd = open("test/cyrano.txt", O_RDONLY);
 	errno = 0;
 	ret = ft_read(fd, str, 2000);
-	printf("La fonction a lu : \n %s\n, str");
+	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat ft_read ret = %d\nErreur = %d\n\n", ret, errno);
 	errno = 0;
 	ret = read(fd, str, 2000);
-	printf("La fonction a lu : \n %s\n, str");
+	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat read ret = %d\nErreur = %d\n\n", ret, errno);
 	close(fd);
 }
