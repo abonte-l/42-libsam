@@ -10,3 +10,4 @@ comp:
 end:
 	mov rax, rcx ; on donne la valeur de retour rcx(registre compteur) a rax (registre retour de fonction)
 	ret ; fin de la fonction
+	

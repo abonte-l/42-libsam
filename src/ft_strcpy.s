@@ -14,3 +14,4 @@ comp:
 end:
 	mov rax, rdi
 	ret
+	

@@ -1,10 +1,10 @@
 section .text
-		global ft_strlen
+		global _ft_strlen
 start:
-	mov rcx, 0
+	mov rcx, rdi
 
 comp:
-	cmp BYTE [rdi + rcx], 0
+	cmp BYTE [rcx], 0
 	jz end
 	inc rcx
 	jmp comp

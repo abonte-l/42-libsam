@@ -14,3 +14,4 @@ comp:
 end:
 	mov rax, rdi ; stockage de dest (rdi) dans rax (registre valeur de retour)
 	ret ; fin de la fonction
+	
