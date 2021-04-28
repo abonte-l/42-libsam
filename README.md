@@ -6,6 +6,10 @@ The goal of this project is to become familiar with assembly language.
 
 ---------------------------
 
+The assembly language, often called asm, is a low-level language computer - or other programmable machine - which has a very strong correspondence between language and the architecture of the machine. Each asm is specific to a particular computer. In contrast, the high-level languages are usually portable across multiple platforms but require compilation or interpretation. Assembly language can also be called symbolic language machine.
+
+---------------------------
+
 ### Some resources that have been useful to me :
 
 * cheat sheet asm--> [x86_64 NASM Assembly Quick Reference](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html) (en)  
