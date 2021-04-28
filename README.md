@@ -1,11 +1,11 @@
 # 42-libsam
 
-## Assembly yourself !
+### Assembly yourself !
 
 The goal of this project is to become familiar with assembly language.
 
 
-#### Some resources that have been useful to me :
+### Some resources that have been useful to me :
 
 * cheat sheet asm--> [x86_64 NASM Assembly Quick Reference](https://www.cs.uaf.edu/2017/fall/cs301/reference/x86_64.html) (en)  
 * list of main instructions--> [x86 Instruction Set Reference](https://c9x.me/x86/) (en)  
