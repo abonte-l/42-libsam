@@ -4,6 +4,7 @@
 
 The goal of this project is to become familiar with assembly language.
 
+---------------------------
 
 ### Some resources that have been useful to me :
 
@@ -17,6 +18,8 @@ The goal of this project is to become familiar with assembly language.
 
 * a rather complete tutorial --> [Learn Assembly Language](https://asmtutor.com/) (en) thanks [abenoit](https://github.com/42-abenoit)  
 * another useful link from [abenoit](https://github.com/42-abenoit) --> [Optimizing subroutines in assembly language](https://www.agner.org/optimize/optimizing_assembly.pdf#%5B%7B%22num%22%3A28%2C%22gen%22%3A0%7D%2C%7B%22name%22%3A%22XYZ%22%7D%2C87%2C456%2C0%5D) (en)  
+
+--------------------------------------------------
 
 
 
