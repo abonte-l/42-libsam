@@ -2,7 +2,8 @@ NAME	= libasm.a
 
 DIR_SRCS = ./src/
 
-SRCS	= $(DIR_SRCS)ft_strlen $(DIR_SRCS)ft_strcpy $(DIR_SRCS)ft_strcmp $(DIR_SRCS)ft_strdup $(DIR_SRCS)ft_read $(DIR_SRCS)ft_write
+SRCS	= $(DIR_SRCS)ft_strlen $(DIR_SRCS)ft_strcpy $(DIR_SRCS)ft_strcmp \
+			$(DIR_SRCS)ft_strdup $(DIR_SRCS)ft_read $(DIR_SRCS)ft_write
 
 OBJS	= $(SRCS:.s=.o)
 
