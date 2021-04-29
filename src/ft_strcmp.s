@@ -1,36 +1,30 @@
 section .text
-		global __ft_strcmp
-start:
-	mov rcx, -1
+		global ft_strcmp
 
-comp:
-	inc rcx
-	cmp BYTE [rdi + rcx], 0
-	jz comp_s1
-	cmp BYTE [rsi + rcx], 0
-	jz comp_s2
-	mov dl, BYTE [rdi + rcx]
-	cmp BYTE [rsi + rcx], dl
-	jz comp
-	sub dl, BYTE [rsi + rcx]
-	jmp end
+ft_strcmp:
+	xor rcx, rcx
+    xor rax, rax
+    xor al, al
+    jmp comps
+    ret
 
-comp_s1:
-	cmp BYTE [rsi + rcx], 0
-	jz same
-	mov dl, BYTE [rsi + rcx]
-	movsx rax, dl
-	ret
+incr:
+    inc rcx
 
-comp_s2:
-	mov dl, BYTE [rsi + rcx]
-	jmp end
+comps:
+	mov al, byte[rdi + rcx]
+    cmp al, byte[rsi + rcx]
+    je s1
+    sub al, byte[rsi + rcx]
+    movsx rax, al
+    ret
 
-same:
-	mov rax, 0
-	ret
+s1:
+    cmp byte[rdi + rcx], 0
+    jne s2
+    ret
 
-end:
-	movsx rax, dl
-	ret
-	
+s2:
+    cmp byte[rsi + rcx], 0
+    jne incr
+    ret

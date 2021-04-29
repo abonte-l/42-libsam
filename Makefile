@@ -14,7 +14,7 @@ EXEC	=	testeur
 all: $(NAME)
 
 .s.o:
-	nasm -f elf64 -s $< -o $(<:.s=.o)
+	nasm -felf64 -s $< -o $(<:.s=.o)
 
 $(NAME): $(OBJ)
 	ar rcs $(NAME) $(OBJ)

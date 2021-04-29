@@ -1,14 +1,14 @@
 section .text
-		global __ft_strlen
-start:
-	mov rcx, rdi
+		global ft_strlen
+ft_strlen:
+	mov rax, rdi
 
 comp:
-	cmp BYTE [rcx], 0
+	cmp BYTE [rax], 0
 	jz end
-	inc rcx
+	inc rax
 	jmp comp
 	
 end:
-	mov rax, rcx
+	sub rax, rdi
 	ret

@@ -1,10 +1,6 @@
 # include "../include/libasm.h"
 
-/*
-** fonctions a tester strlen, strcpy, strdup, strcmp , read, write
-*/
-
-void test_strlen()
+void test_strlen(void)
 {
 	char *s1 = "Hello World !";
 	char *s2 = "";
@@ -29,7 +25,7 @@ void test_strlen()
 	printf("Resultat ft_strlen : %ld\n\n", ft_strlen(s4));
 }
 
-void test_strcmp()
+void test_strcmp(void)
 {
 	char *s1 = "Hello World !";
 	char *s2 = "";
@@ -62,7 +58,7 @@ void test_strcmp()
 	printf("Resultat ft_strcmp : %d\n\n", strcmp(s5, s2));
 }
 
-void test_strcpy()
+void test_strcpy(void)
 {
 	char *s1 = "Hello World !";
 	char *s2 = "";
@@ -90,7 +86,7 @@ void test_strcpy()
 
 }
 
-void test_strdup()
+void test_strdup(void)
 {
 	char *s1 = "Hello World !";
 	char *s2 = "";
@@ -103,18 +99,12 @@ void test_strdup()
 
 	printf("PARAMETRE : %s\n", s2);
 	printf("Resultat strdup : %s\n", strdup(s2));
-	printf("Resultat ft_strdup : %s\n\n", ft_strdup(s2));
 
-	printf("PARAMETRE : %s\n", s3);
-	printf("Resultat strdup : %s\n", strdup(s3));
-	printf("Resultat ft_strdup : %s\n\n", ft_strdup(s3));
-
-	printf("PARAMETRE : %s\n", s4);
 	printf("Resultat strdup : %s\n", strdup(s4));
 	printf("Resultat ft_strdup : %s\n\n", ft_strdup(s4));
 }
 
-void test_write()
+void test_write(void)
 {
 	int ret;
 	int fd;
@@ -194,49 +184,54 @@ void test_write()
 	
 }
 
-void test_read()
+void test_read(void)
 {
 	int ret;
 	int fd;
-	char str[2000];
+	char str[1000];
 
-	printf("Test read depuis le standard input\n");
+	printf("Test read depuis le standard input\n\n");
 	printf("Veuillez entrer l'input :\n");
 	errno = 0;
-	ret = ft_read(0, str, 2000);
+	ret = ft_read(0, str, 1000);
 	printf("La fonction a lu : \n %s\n", str);
-	printf("Resultat ft_read ret = %d\nErreur = %d\n\n", ret, errno);
+	printf("Resultat ft_read ret = %d\nErreur = %i\n\n", ret, errno);
 	errno = 0;
-	ret = read(0, str, 2000);
+	ret = read(0, str, 1000);
 	printf("La fonction a lu : \n %s\n", str);
-	printf("Resultat write ret = %d\nErreur = %d\n\n", ret, errno);
+	printf("Resultat write ret = %d\nErreur = %i\n\n", ret, errno);
 
-	printf("Test read depuis un fichier\n");
+	printf("Test read depuis un fichier\n\n");
 
 	fd = open("test/demain.txt", O_RDONLY);
+	printf("Veuillez entrer l'input :\n");
 	errno = 0;
-	ret = ft_read(fd, str, 2000);
+	ret = ft_read(fd, str, 1000);
 	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat ft_read ret = %d\nErreur = %d\n\n", ret, errno);
+	close(fd);
+	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
-	ret = read(fd, str, 2000);
+	ret = read(fd, str, 1000);
 	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat read ret = %d\nErreur = %d\n\n", ret, errno);
 	close(fd);
 	
 	fd = open("test/cyrano.txt", O_RDONLY);
 	errno = 0;
-	ret = ft_read(fd, str, 2000);
+	ret = ft_read(fd, str, 1000);
 	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat ft_read ret = %d\nErreur = %d\n\n", ret, errno);
+	close(fd);
+	fd = open("test/cyrano.txt", O_RDONLY);
 	errno = 0;
-	ret = read(fd, str, 2000);
+	ret = read(fd, str, 1000);
 	printf("La fonction a lu : \n %s\n", str);
 	printf("Resultat read ret = %d\nErreur = %d\n\n", ret, errno);
 	close(fd);
 }
 
-int main()
+int main(void)
 {
 	printf("****** TEST FT_STRLEN ******\n");
 	test_strlen();
