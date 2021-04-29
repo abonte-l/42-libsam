@@ -8,19 +8,19 @@ void test_strlen(void)
 	char *s4 = "Prince, demande à Dieu pardon! Je quarte du pied, j'escarmouche, Je coupe, je feinte... A la fin de l'envoi, je touche.";
 
 
-	printf("PARAMETRE : %s\n", s1);
+	//printf("PARAMETRE : %s\n", s1);
 	printf("Resultat strlen : %ld\n", strlen(s1));
 	printf("Resultat ft_strlen : %ld\n\n", ft_strlen(s1));
 
-	printf("PARAMETRE : %s\n", s2);
+	//printf("PARAMETRE : %s\n", s2);
 	printf("Resultat strlen : %ld\n", strlen(s2));
 	printf("Resultat ft_strlen : %ld\n\n", ft_strlen(s2));
 
-	printf("PARAMETRE : %s\n", s3);
+	//printf("PARAMETRE : %s\n", s3);
 	printf("Resultat strlen : %ld\n", strlen(s3));
 	printf("Resultat ft_strlen : %ld\n\n", ft_strlen(s3));
 
-	printf("PARAMETRE : %s\n", s4);
+	//printf("PARAMETRE : %s\n", s4);
 	printf("Resultat strlen : %ld\n", strlen(s4));
 	printf("Resultat ft_strlen : %ld\n\n", ft_strlen(s4));
 }
@@ -231,19 +231,20 @@ void test_read(void)
 	close(fd);
 }
 
+
 int main(void)
 {
-	printf("****** TEST FT_STRLEN ******\n");
+	printf("\033[37;1m****** TEST FT_STRLEN ******\n");
 	test_strlen();
-	printf("****** TEST FT_STRCMP ******\n");
+	printf("\033[37;1m****** TEST FT_STRCMP ******\n");
 	test_strcmp();
-	printf("****** TEST FT_STRCPY ******\n");
+	printf("\033[37;1m****** TEST FT_STRCPY ******\n");
 	test_strcpy();
-	printf("****** TEST FT_STRDUP ******\n");
+	printf("\033[37;1m****** TEST FT_STRDUP ******\n");
 	test_strdup();
-	printf("****** TEST FT_WRITE ******\n");
+	printf("\033[37;1m****** TEST FT_WRITE ******\n");
 	test_write();
-	printf("****** TEST FT_READ ******\n");
+	printf("\033[37;1m****** TEST FT_READ ******\n");
 	test_read();
 	return(0);
 }
