@@ -6,22 +6,22 @@ section .text
 
 ft_strdup:
 	xor rax, rax
-    push r12
-    mov r12, rdi
-    call ft_strlen
+    push r15
+    mov r15, rdi
+    call ft_strlen wrt ..plt
     mov rdi, rax
 
 alloc:
 	inc rdi
-    call malloc
+    call malloc wrt ..plt
     cmp rax, 0
     jne copy
-    pop r12
+    pop r15
     ret
 
 copy:
 	mov rdi, rax
-    mov rsi, r12
-    call ft_strcpy
-    pop r12
+    mov rsi, r15
+    call ft_strcpy wrt ..plt
+    pop r15
     ret

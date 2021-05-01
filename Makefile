@@ -7,7 +7,7 @@ OBJ		= 	$(SRC:.s=.o)
 
 CC		=	clang
 
-CCFLAGS	=	-Wall -Wextra -Werror
+CCFLAGS	=	-Wall -Wextra -Werror #-fsanitize=address -fno-omit-frame-pointer
 
 EXEC	=	exe
 
@@ -22,12 +22,12 @@ $(NAME): $(OBJ)
 
 
 test:main.o libasm.a
-	@$(CC) main.o libasm.a -o $(EXEC)
+	@$(CC) $(CCFLAGS) main.o libasm.a -o $(EXEC)
 	@echo "\033[37;1m./$(EXEC)            \033[32;1m| creation OK |\033[0;1m"
 	@./exe
 
 main.o:test/main.c 
-	@$(CC) -c $< -I ./include -o main.o
+	@$(CC) $(CCFLAGS) -c $< -I ./include -o main.o
 
 clean:
 	@$(RM) $(OBJ)

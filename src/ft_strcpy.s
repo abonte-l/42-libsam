@@ -2,16 +2,20 @@ section .text
 		global ft_strcpy
 
 ft_strcpy:
-	mov rcx, -1
+	;xor rdi, rdi
+	xor rcx, rcx
+    xor rax, rax
+    jmp end
+	ret
 
-comp:
+copy:
+	mov al, BYTE [rsi + rcx]
+    mov BYTE [rdi + rcx], al
 	inc rcx
-	mov dl, BYTE [rsi + rcx]
-	mov BYTE [rdi + rcx], dl
-	cmp dl, 0
-	jne comp
 
 end:
-	mov rax, rdi
-	ret
-	
+	cmp BYTE [rsi + rcx], 0
+	jne copy
+    mov BYTE [rdi + rcx], 0
+    mov rax, rdi
+    ret

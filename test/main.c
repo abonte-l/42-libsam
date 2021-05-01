@@ -65,8 +65,8 @@ void test_strcpy(void)
 	char *s3 = "Demain, dès l’aube, à l’heure où blanchit la campagne, Je partirai. Vois-tu, je sais que tu m’attends.";
 	char *s4 = "Je coupe, je feinte... A la fin de l'envoi, je touche.";
 	char dest1[20];
-	char dest2[110];
-	char dest3[120];
+	char dest2[120];
+	char dest3[60];
 
 	printf("PARAMETRE : %s\n", s1);
 	printf("\033[32;1mResultat strcpy : %s\n\033[0m", strcpy(dest1, s1));
@@ -82,33 +82,50 @@ void test_strcpy(void)
 
 	printf("PARAMETRE : %s\n", s4);
 	printf("\033[32;1mResultat strcpy : %s\n\033[0m", strcpy(dest3, s4));
-	printf("\033[33;1mResultat ft_strcpy : %s\n\n\033[0m", ft_strcpy(dest2, s4));
+	printf("\033[33;1mResultat ft_strcpy : %s\n\n\033[0m", ft_strcpy(dest3, s4));
 
 }
 
 void test_strdup(void)
 {
 	char *s1 = "Hello World !";
-	char *s2 = "";
+	char *s2 = ".";
 	char *s3 = "Demain, dès l’aube, à l’heure où blanchit la campagne, Je partirai. Vois-tu, je sais que tu m’attends.";
 	char *s4 = "Je coupe, je feinte... A la fin de l'envoi, je touche.";
+	char *path = NULL;
 
 	printf("PARAMETRE : %s\n", s2);
-	printf("\033[32;1mResultat strdup : %s\n\033[0m", strdup(s2));
-	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", ft_strdup(s2));
-
+	path = strdup(s2);
+	printf("\033[32;1mResultat strdup : %s\n\033[0m", path);
+	free(path);
+	path = ft_strdup(s2);
+	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", path);
+	free(path);
 
 	printf("PARAMETRE : %s\n", s1);
-	printf("\033[32;1mResultat strdup : %s\n\033[0m", strdup(s1));
-	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", ft_strdup(s1));
+	path = strdup(s1);
+	printf("\033[32;1mResultat strdup : %s\n\033[0m", path);
+	free(path);
+	path = ft_strdup(s1);
+	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", path);
+	free(path);
 
-	printf("Parametre : %s\n", s3);
-	printf("\033[32;1mResultat strdup : %s\n\033[0m", strdup(s3));
-	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", ft_strdup(s3));
+	printf("PARAMETRE : %s\n", s3);
+	path = strdup(s3);
+	printf("\033[32;1mResultat strdup : %s\n\033[0m", path);
+	free(path);
+	path = ft_strdup(s3);
+	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", path);
+	free(path);
 
-	printf("Parametre : %s\n", s4);
-	printf("\033[32;1mResultat strdup : %s\n\033[0m", strdup(s4));
-	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", ft_strdup(s4));
+	printf("PARAMETRE : %s\n", s4);
+	path = strdup(s4);
+	printf("\033[32;1mResultat strdup : %s\n\033[0m", path);
+	free(path);
+	path = ft_strdup(s4);
+	printf("\033[33;1mResultat ft_strdup : %s\n\n\033[0m", path);
+	free(path);
+	
 }
 
 void test_write(void)
@@ -229,18 +246,18 @@ void test_read(void)
 {
 	int ret;
 	int fd;
-	char str[900];
+	char str[700];
 	char strb[1000];
 
 	printf("\033[37;44;1mTest read depuis le standard input :\033[0;49m\n\n");
 	printf("Veuillez entrer l'input :\n");
 	errno = 0;
-	ret = read(0, str, 900);
+	ret = read(0, str, 700);
 	printf("La fonction a lu :\n%s\n", str);
 	printf("\033[32;1mResultat read ret = %d\nErreur = %i\n\n\033[0m", ret, errno);
 	errno = 0;
 	printf("Veuillez entrer le meme input :\n");
-	ret = ft_read(0, str, 900);
+	ret = ft_read(0, str, 700);
 	printf("La fonction a lu :\n%s\n", str);
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %i\n\n\033[0m", ret, errno);
 
@@ -248,14 +265,14 @@ void test_read(void)
 
 	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
-	ret = read(fd, str, 900);
+	ret = read(fd, str, 700);
 	printf("La fonction a lu : \n%s\n", str);
 	printf("\033[32;1mResultat read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 	
 	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
-	ret = ft_read(fd, str, 900);
+	ret = ft_read(fd, str, 700);
 	printf("La fonction a lu : \n%s\n", str);
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
@@ -273,7 +290,6 @@ void test_read(void)
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 }
-
 
 int main(void)
 {

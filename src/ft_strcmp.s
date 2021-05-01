@@ -12,19 +12,19 @@ incr:
     inc rcx
 
 comps:
-	mov al, byte[rdi + rcx]
-    cmp al, byte[rsi + rcx]
+	mov al, BYTE [rdi + rcx]
+    cmp al, BYTE [rsi + rcx]
     je s1
-    sub al, byte[rsi + rcx]
+    sub al, BYTE [rsi + rcx]
     movsx rax, al
     ret
 
 s1:
-    cmp byte[rdi + rcx], 0
+    cmp BYTE [rdi + rcx], 0
     jne s2
     ret
 
 s2:
-    cmp byte[rsi + rcx], 0
+    cmp BYTE [rsi + rcx], 0
     jne incr
     ret
