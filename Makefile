@@ -30,14 +30,14 @@ main.o:test/main.c
 
 clean:
 	@$(RM) $(OBJ)
-	@echo "\033[37;1mlibasm.a objects \033[31;1m|   supp OK   |\033[0;1m"  
+	@echo "\033[37;1mlibasm.a objects \033[33;1m|   supp OK   |\033[0;1m"  
 
 fclean: clean
 	@$(RM) $(NAME)
 	@$(RM) $(EXEC)
 	@$(RM) main.o 
-	@echo "\033[37;1m$(NAME)         \033[31;1m|   supp OK   |\033[0;1m"
-	@echo "\033[37;1m./exe            \033[31;1m|   supp OK   |\033[0;1m"
+	@echo "\033[37;1m$(NAME)         \033[33;1m|   supp OK   |\033[0;1m"
+	@echo "\033[37;1m./exe            \033[33;1m|   supp OK   |\033[0;1m"
 	@echo "\033[34;1m                 | all cleared |"
 
 re: fclean all
