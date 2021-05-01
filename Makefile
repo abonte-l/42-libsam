@@ -24,6 +24,7 @@ $(NAME): $(OBJ)
 test:main.o libasm.a
 	@$(CC) main.o libasm.a -o $(EXEC)
 	@echo "\033[37;1m./$(EXEC)            \033[32;1m| creation OK |\033[0;1m"
+	@./exe
 
 main.o:test/main.c 
 	@$(CC) -c $< -I ./include -o main.o
