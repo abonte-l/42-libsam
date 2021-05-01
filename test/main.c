@@ -254,12 +254,10 @@ void test_read(void)
 	printf("Veuillez entrer l'input :\n");
 	errno = 0;
 	ret = read(0, str, 200);
-	//printf("La fonction a lu :\n%s\n", str);
 	printf("\033[32;1mResultat read ret = %d\nErreur = %i\n\n\033[0m", ret, errno);
 	errno = 0;
 	printf("Veuillez entrer le meme input :\n");
 	ret = ft_read(0, str, 200);
-	//printf("La fonction a lu :\n%s\n", str);
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %i\n\n\033[0m", ret, errno);
 
 	printf("\033[37;44;1mTest read depuis un fichier :\033[0;49m\n\n");
@@ -267,27 +265,23 @@ void test_read(void)
 	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
 	ret = read(fd, stra, 750);
-	//printf("La fonction a lu : \n%s\n", stra);
 	printf("\033[32;1mResultat read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 	
 	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
 	ret = ft_read(fd, stra, 750);
-	//printf("La fonction a lu : \n%s\n", stra);
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 	
 	fd = open("test/cyrano.txt", O_RDONLY);
 	errno = 0;
 	ret = read(fd, strb, 1000);
-	//printf("La fonction a lu : \n%s\n", strb);
 	printf("\033[32;1mResultat read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 	fd = open("test/cyrano.txt", O_RDONLY);
 	errno = 0;
 	ret = ft_read(fd, strb, 1000);
-	//printf("La fonction a lu : \n%s\n", strb);
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 }
