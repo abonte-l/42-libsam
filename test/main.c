@@ -246,18 +246,19 @@ void test_read(void)
 {
 	int ret;
 	int fd;
-	char str[700];
+	char str[600];
+	char stra[750];
 	char strb[1000];
 
 	printf("\033[37;44;1mTest read depuis le standard input :\033[0;49m\n\n");
 	printf("Veuillez entrer l'input :\n");
 	errno = 0;
-	ret = read(0, str, 700);
+	ret = read(0, str, 600);
 	printf("La fonction a lu :\n%s\n", str);
 	printf("\033[32;1mResultat read ret = %d\nErreur = %i\n\n\033[0m", ret, errno);
 	errno = 0;
 	printf("Veuillez entrer le meme input :\n");
-	ret = ft_read(0, str, 700);
+	ret = ft_read(0, str, 600);
 	printf("La fonction a lu :\n%s\n", str);
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %i\n\n\033[0m", ret, errno);
 
@@ -265,15 +266,15 @@ void test_read(void)
 
 	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
-	ret = read(fd, str, 700);
-	printf("La fonction a lu : \n%s\n", str);
+	ret = read(fd, stra, 750);
+	printf("La fonction a lu : \n%s\n", stra);
 	printf("\033[32;1mResultat read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 	
 	fd = open("test/demain.txt", O_RDONLY);
 	errno = 0;
-	ret = ft_read(fd, str, 700);
-	printf("La fonction a lu : \n%s\n", str);
+	ret = ft_read(fd, stra, 750);
+	printf("La fonction a lu : \n%s\n", stra);
 	printf("\033[33;1mResultat ft_read ret = %d\nErreur = %d\n\n\033[0m", ret, errno);
 	close(fd);
 	
