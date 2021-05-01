@@ -7,7 +7,7 @@ OBJ		= 	$(SRC:.s=.o)
 
 CC		=	clang
 
-CCFLAGS	=	-Wall -Wextra -Werror #-fsanitize=address -fno-omit-frame-pointer
+CCFLAGS	=	-Wall -Wextra -Werror #-fsanitize=address #-fno-omit-frame-pointer
 
 EXEC	=	exe
 
@@ -18,6 +18,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
+	@ranlib $(NAME)
 	@echo "\033[37;1m$(NAME)         \033[32;1m| creation OK |\033[0;1m"
 
 

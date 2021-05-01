@@ -26,6 +26,3 @@ The assembly language, often called asm, is a low-level language computer - or o
 --------------------------------------------------
 
 
-
-
-
