@@ -28,7 +28,7 @@ The assembly language, often called asm, is a low-level language computer - or o
 Compile libasm  
 `make`
 
-Run testsb  
+Run tests  
 `make test`
 
 Clean everything  
